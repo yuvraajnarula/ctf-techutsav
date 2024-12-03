@@ -1,5 +1,10 @@
-<?php
+<style>
+    <?php
+            include './styles.css';
 
+    ?>    
+</style>
+<?php
 use Src\Controllers\HomeController;
 
     require_once "../vendor/autoload.php";

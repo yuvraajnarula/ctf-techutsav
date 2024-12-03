@@ -8,8 +8,7 @@ class HomeController {
     private $client;
 
     public function index() {
-        // Correct the path to your view file
-        include __DIR__ . "/../../views/login.php";
+        include __DIR__ . "/../views/login.php";
     }
 
     public function __construct() {
