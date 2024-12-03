@@ -1,21 +1,23 @@
 <?php
-// Correct file path resolution
 
-$baseDir = realpath(dirname(__FILE__) . '/../');
-$controllerPath = $baseDir . '/src/controllers/homeController.php';
+use Src\Controllers\HomeController;
 
-// Ensure the file exists before requiring
-if (file_exists($controllerPath)) {
-    require_once $controllerPath;
-    
-    try {
-        echo $controller->index();
-    } catch (Exception $e) {
-        // Error handling
-        echo "Error: " . $e->getMessage();
+    require_once "../vendor/autoload.php";
+    require_once "../config/env.php";
+    require_once "../config/database.php";
+    session_start();
+    $requestURI = $_SERVER["REQUEST_URI"];
+    switch( $requestURI ) {
+        case "/":
+            require_once "../src/controllers/homeController.php";
+            $controller = new HomeController();
+            echo $controller->index();
+            break;
+        case "/auth":
+            require_once "../src/controllers/homeController.php";
+            $controller = new HomeController();
+            echo $controller->connectToDB();
+            break;
+
     }
-} else {
-    // Detailed error if file not found
-    echo "Error: Controller file not found at path: " . $controllerPath;
-}
 ?>
