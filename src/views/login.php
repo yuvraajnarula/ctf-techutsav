@@ -10,15 +10,10 @@
         $password = $_POST['password'];
 
         $homeController = new HomeController();
-        $db = $homeController->connectToDB();
-        $collection = $db->users;
-
-        $query = ['username' => $username, 'password' => $password];
-        $result = $collection->find();
-
-        echo $result;
+        $collection = $homeController->connectToDB();
     }
 ?>
+
 <div class="form-wrapper">
 <div class="login-form">
     <h1>

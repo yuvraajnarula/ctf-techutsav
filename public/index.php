@@ -8,7 +8,6 @@
 use Src\Controllers\HomeController;
 
     require_once "../vendor/autoload.php";
-    require_once "../config/env.php";
     session_start();
     $requestURI = $_SERVER["REQUEST_URI"];
     switch( $requestURI ) {

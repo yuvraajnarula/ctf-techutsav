@@ -17,18 +17,18 @@ class HomeController {
 
     public function connectToDB() {
         try {
-            // Get the password from the .env file
-            $pwd = getenv("pwd");
+            $pwd = $_ENV["pwd"];
 
-            // Correctly concatenate the password into the MongoDB URI
             $uri = "mongodb+srv://user:" . $pwd . "@cluster0.cg0le.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-            // Create the MongoDB client
             $this->client = new Client($uri);
 
-            return $this->client->ctf;
+            $db = $this->client->ctf;
+
+            return $db->users;
         } catch (Exception $e) {
             return $e->getMessage() ;
         }
     }
 }
+?>
