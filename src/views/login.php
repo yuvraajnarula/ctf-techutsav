@@ -27,7 +27,7 @@
     <form method="post">
         <div class="label-group">
             <label for="username">Username</label> <br>
-            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="username" name="username" id="username" placeholder="Username">
         </div>
         <div class="label-group">
             <label for="password">Password</label><br>
