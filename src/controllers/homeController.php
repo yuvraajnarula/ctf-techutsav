@@ -3,6 +3,10 @@ namespace Src\Controllers;
 
 use MongoDB\Client;
 use Exception;
+use Dotenv\Dotenv;
+
+// Load environment variables from the .env file in the project root
+
 
 class HomeController {
     public $client;
@@ -17,18 +21,17 @@ class HomeController {
 
     public function connectToDB() {
         try {
-            $pwd = $_ENV["pwd"];
-
-            $uri = "mongodb+srv://user:" . $pwd . "@cluster0.cg0le.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
+            // Build the connection URI
+            $uri = "";
+            // Create the MongoDB client
             $this->client = new Client($uri);
-
+            
             $db = $this->client->ctf;
-
-            return $db->users;
+            $collection = $db->users;
+            return $collection;
         } catch (Exception $e) {
-            return $e->getMessage() ;
+            // Return the error message in case of failure
+            return $e->getMessage();
         }
     }
 }
-?>
