@@ -5,7 +5,7 @@ use MongoDB\Client;
 use Exception;
 
 class HomeController {
-    private $client;
+    public $client;
 
     public function index() {
         include __DIR__ . "/../views/login.php";
@@ -26,9 +26,9 @@ class HomeController {
             // Create the MongoDB client
             $this->client = new Client($uri);
 
-            return "<h1>Connected to the MongoDB database successfully</h1>";
+            return $this->client->ctf;
         } catch (Exception $e) {
-            return "<h1>Failed to connect: " . $e->getMessage() . "</h1>";
+            return $e->getMessage() ;
         }
     }
 }
