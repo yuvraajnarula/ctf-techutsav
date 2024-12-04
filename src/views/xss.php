@@ -1,60 +1,28 @@
 <?php
-// Capture user input
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userInput = $_POST['userInput'];
+
+if (isset($_GET['name'])) {
+    $name = $_GET['name']; 
+    echo "<h1>Welcome, $name!</h1>";
 } else {
-    $userInput = '';
+    echo "<h1>Welcome to the College CTF Challenge!</h1>";
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XSS Example</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .message {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-    </style>
-</head>
 <body>
     <div class="form-wrapper">
-        <div class="login-form">
-            <h1>Input Text Example</h1>
-            <form id="xssForm" method="POST">
-                <label for="userInput">Enter some text:</label>
-                <input type="text" id="userInput" name="userInput" value="<?php echo $userInput; ?>">
-                <input type="submit" value="Submit">
-            </form>
+        <div>
+            
+    <h1>Cross-Site Scripting (XSS) Challenge</h1>
+    <p>Your goal is to exploit XSS to access the next challenge!</p>
 
-            <div id="output">
-                <!-- Display the output as raw HTML -->
-                <?php if (!empty($userInput)) : ?>
-                    <div class="message">
-                        <?php echo $userInput; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
+    <form method="GET">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>Hint: Try injecting JavaScript into the input field to manipulate the URL!</p>
         </div>
     </div>
-
-    <script>
-        document.getElementById('xssForm').addEventListener('submit', function(event) {
-            event.preventDefault();  // Prevent form from submitting to prevent page refresh
-            const userInput = document.getElementById('userInput').value;
-
-            // Insert user input into the page (no escaping or sanitizing here)
-            document.getElementById('output').innerHTML = `<div class="message">${userInput}</div>`;
-        });
-    </script>
 </body>
 </html>

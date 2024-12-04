@@ -21,7 +21,12 @@ use Src\Controllers\HomeController;
         case "/xss/game":
             require_once "../src/controllers/HomeController.php";
             $controller = new HomeController();
-            echo $controller->game();
+            echo $controller->xss();
+            break;
+        case "/fileinclusion":
+            require_once "../src/controllers/HomeController.php";
+            $controller = new HomeController();
+            echo $controller->fileInclusion();
             break;
         case "/dbInjection":
             require_once "../src/controllers/DbInjectionController.php";
