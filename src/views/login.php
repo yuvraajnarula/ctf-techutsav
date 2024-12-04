@@ -1,5 +1,6 @@
 <?php
-    use Src\Controllers\HomeController;
+
+use Src\Controllers\DbInjectionController;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         formOnSubmit();
@@ -12,7 +13,7 @@
         
         // Validate that the username and password are not empty
         if (!empty($username) && !empty($password)) {
-            $homeController = new HomeController();
+            $homeController = new DbInjectionController();
             $collection = $homeController->connectToDB();
 
             // MongoDB query to find the user by username or use dummy condition to match all users

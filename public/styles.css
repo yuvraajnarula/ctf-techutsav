@@ -13,23 +13,54 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full screen height */
+  flex-direction: column;
+  height: 100vh; 
   margin: 0;
 }
 
-.form-wrapper {
+.form-wrapper,.home-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%; /* 80% width of the viewport */
-  max-width: 600px; /* Max width to keep it from stretching too wide */
+  width: 80%; 
+  max-width: 600px; 
   margin: auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.085);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+.home-wrapper{
+  flex-direction: column !important ;
+}
+.btn-flex{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vw;
+}
+.home-span{
+  width: 85%;
+  margin: auto;
+}
+.home-wrapper button{
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding:10px;
+  width: 90%;
+  font-size: 1.2vw;
+  font-family: "Urbanist", sans-serif !important;
+  background-color: rgba(255, 255, 255, 0.075);
+  color: #eee;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  margin-top: 2.5vw;
+  cursor: pointer;
 
+}
 .login-form {
   width: 100%;
 }
@@ -101,4 +132,10 @@ form input[type="submit"]:hover {
 }
 .user-div h3{
   text-align: center;
+}
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #ccc;
 }
