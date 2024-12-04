@@ -6,8 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 function formOnSubmit() {
     $name = $_POST['name'];
+    $file_acquisiton = 'file.txt';
     if (!empty($name)) {
-        echo "<h2>Welcome $name!</h2>";
+        echo "<h2> filepath: <a href=\"/fileinclusion\">". $file_acquisiton."</a></h2>";
     } else {
         echo "<h2>Please enter your name.</h2>";
     }
