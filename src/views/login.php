@@ -46,7 +46,7 @@ use Src\Controllers\DbInjectionController;
         }
     }
 ?>
-
+<style>body{flex-direction: row !important;}</style>
 <div class="form-wrapper">
     <div class="login-form">
         <h1>

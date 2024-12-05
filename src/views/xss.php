@@ -8,12 +8,12 @@ function formOnSubmit() {
     $name = $_POST['name'];
     $key = $_POST['key'];
     $file_acquisiton = "file.txt";
-    
+    $store_key  = $_COOKIE["PHPSESSID"];
     if ($name === "<script>alert(document.cookie)</script>") {
         echo $name;
     }
 
-    if ($key === "5fit38782i37g20fpej3tjrido") {
+    if ($key === $store_key) {
         echo "<h2> filepath: <a href=\"/fileinclusion\">". $file_acquisiton."</a></h2>";
     }
 }
