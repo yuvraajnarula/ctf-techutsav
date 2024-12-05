@@ -3,7 +3,7 @@
   "platformVersion": 2,
   "builds": [
     {
-      "src": "api/index.php"
+      "src": "api/public/index.php"
     },
     {
       "src": "src/**/*.php"
@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/index.php"
+      "dest": "api/public/index.php"
     }
   ]
 }
