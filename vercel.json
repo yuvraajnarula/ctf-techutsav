@@ -1,19 +1,18 @@
 {
   "version": 2,
+  "platformVersion": 2,
   "builds": [
     {
-      "src": "api/public/index.php",
-      "use": "php"
+      "src": "api/index.php"
     },
     {
-      "src": "api/src/**/*.php",
-      "use": "php"
+      "src": "src/**/*.php"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/public/index.php"
+      "dest": "api/index.php"
     }
   ]
 }
