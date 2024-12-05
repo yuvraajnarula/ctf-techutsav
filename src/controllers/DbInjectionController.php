@@ -6,7 +6,6 @@ use Exception;
 use Dotenv\Dotenv;
 
 
-
 class DbInjectionController {
     public $client;
 
@@ -15,16 +14,18 @@ class DbInjectionController {
     }
 
     public function __construct() {
+        $dotenv = Dotenv::createImmutable(__DIR__ . "..\..\..");
+        $dotenv->load();
         $this->client = null;
     }
 
     public function connectToDB() {
         try {
             // Build the connection URI
-            $uri = "";
+            $uri = $_ENV["URI"];
             // Create the MongoDB client
             $this->client = new Client($uri);
-            
+
             $db = $this->client->ctf;
             $collection = $db->users;
             return $collection;
