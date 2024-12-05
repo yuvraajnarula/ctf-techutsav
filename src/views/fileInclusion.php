@@ -1,6 +1,4 @@
 <?php
-// File Inclusion Vulnerability (Level 2)
-
 if (isset($_GET['file'])) {
     $file = $_GET['file'];
     include($file);
