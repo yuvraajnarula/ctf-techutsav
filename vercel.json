@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "platformVersion": 2,
   "builds": [
     {
       "src": "api/public/index.php"
